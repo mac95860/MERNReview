@@ -1,18 +1,34 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
 
 function Header() {
     return (
         <div className = "header">
-            <img className = "header_logo" src = 'amazon-clone\public\images\logo.png' alt = "logo"/>
+            <img className = "header_logo" src = '/images/logo.png' alt = "logo"/>
     
 
             <div className = "header_search">
+                <input className ="header_searchInput" type = "text"/>
+            </div>
 
-
+            <div className="header_nav">
+                <div className = "header_option">
+                    {/* signIn */}
+                    <span className ="header_optionLineONe">Hello Guest</span>
+                    <span className ="header_optionLineTwo">SignIn</span>
+                </div>
+                <div className = "header_option">
+                    {/*  Orders*/}
+                    <span className ="header_optionLineONe">returns</span>
+                    <span className ="header_optionLineTwo"> Orders</span>
+                </div>
+                <div className = "header_option">
+                    {/* PrimeMembership */}
+                    <span className ="header_optionLineONe">Your</span>
+                    <span className ="header_optionLineTwo">Prime</span>
+                </div>
             </div>
         </div>
-
     )
 }
 
