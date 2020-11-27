@@ -12,5 +12,14 @@
 
 .subtotal_gift {
     display: flex;
-    align-items: center;
+}
+
+.subtotal > button {
+    background: #f0c14b;
+    border-radius: 2px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid;
+    border-color: #a88734 #9c7e41 #846a29;
+    color: #111;
 }
