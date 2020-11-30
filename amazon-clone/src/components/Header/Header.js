@@ -40,8 +40,6 @@ function Header() {
                         <span className = "header_option LineTwo header_basketCount">{basket?.length}</span> 
                     </div>
                 </Link>
-
-                
             </div>
         </div>
     )
