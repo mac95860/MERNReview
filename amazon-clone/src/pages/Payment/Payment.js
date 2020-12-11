@@ -1,6 +1,7 @@
 import React from 'react';
 import './Payment.css';
 import {useStateValue} from '../../util/StateProvider';
+import CheckoutProduct from '../../components/CheckoutProduct/CheckoutProduct'
 export default function Payment() {
     const [ { basket, user}, dispatch ] = useStateValue()
     return (
@@ -18,7 +19,21 @@ export default function Payment() {
                     </div>
                 </div>
                 <div className ='payment_section'>
-
+                        <div className = "payment-address">
+                            <h3>Review items and delivery</h3>
+                        </div>
+                        <div className = 'payment_item'>
+                            {/* items in basket go here */}
+                            {basket.map(item => (
+                                <CheckoutProduct
+                                    id={item.id}
+                                    title={item.title}
+                                    image={item.image}
+                                    price= {item.price}
+                                    rating={item.rating}
+                                />
+                            ))}
+                        </div>
                 </div>
                 <div className ='payment_section'>
 
