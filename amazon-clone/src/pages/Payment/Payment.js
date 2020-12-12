@@ -1,12 +1,19 @@
 import React from 'react';
 import './Payment.css';
 import {useStateValue} from '../../util/StateProvider';
-import CheckoutProduct from '../../components/CheckoutProduct/CheckoutProduct'
+import CheckoutProduct from '../../components/CheckoutProduct/CheckoutProduct';
+import { Link } from 'react-router-dom';
+
 export default function Payment() {
     const [ { basket, user}, dispatch ] = useStateValue()
     return (
         <div className = "payment">
             <div className = 'payment_container'>
+                <h1>
+                    Checkout (<Link to="/checkout">
+                            {basket?.length}
+                        </Link>) items
+                </h1>
                 <div className ='payment_section'>
                     <div className="payment_title">
                         <h3>Delivery Address</h3>
@@ -36,7 +43,12 @@ export default function Payment() {
                         </div>
                 </div>
                 <div className ='payment_section'>
-
+                    <div className = "payment_title">
+                        <h3>Payment Method</h3>
+                    </div>
+                    <div className = "payment_details">
+                            {/* stripe code goes here */}
+                    </div>
                 </div>
                 
             </div>
