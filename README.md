@@ -8,6 +8,7 @@
 - Express
 - Node.js
 - Material UI
+- Stripe
 
 ## Description
 
