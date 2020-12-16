@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../../util/reducer';
-
+import { useHistory } from 'react-router-dom';
 
 export default function Payment() {
     const [ { basket, user}, dispatch ] = useStateValue();
-
+    const history = useHistory();
     const stripe = useStripe();
     const elements = useElements();
 
@@ -38,11 +38,20 @@ export default function Payment() {
     const handleSubmit =  async (e) => {
         e.preventDefault();
         setProcessing(true);
-     const payload = await stripe.confirmCardPayment(clientSecret, {
+     
+        const payload = await stripe.confirmCardPayment(clientSecret, {
          payment_method: {
              card: elements.getElement(CardElement)
          }
-     }) 
+     }).then(({ paymentIntent }) => {
+        // payment intent is the confirmation of payment
+
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+        //prevents from going back to payment page
+        history.replace('/orders');
+    })
         
     }
 
