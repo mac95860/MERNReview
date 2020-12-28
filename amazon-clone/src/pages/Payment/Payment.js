@@ -48,7 +48,7 @@ export default function Payment() {
                 card: elements.getElement(CardElement)
             }
         }).then(({ paymentIntent }) => {
-            // paymentIntent = payment confirmation
+            //paymentIntent = payment confirmation
 
             db
                 .collection('users')
