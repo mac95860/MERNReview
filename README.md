@@ -8,6 +8,7 @@
 - Node.js
 - Material UI
 - Stripe
+- Moment.js
 
 ## Description
 

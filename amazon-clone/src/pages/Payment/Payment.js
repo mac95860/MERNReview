@@ -54,7 +54,7 @@ export default function Payment() {
                 .collection('users')
                 .doc(user?.uid)
                 .collection('orders')
-                .doc(paymentIntent)
+                .doc(paymentIntent.id)
                 .set({
                     basket: basket,
                     amount: paymentIntent.amount,
